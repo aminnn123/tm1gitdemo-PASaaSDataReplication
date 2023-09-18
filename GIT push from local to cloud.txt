@@ -1,0 +1,24 @@
+To push data from local desktop to git cloud:
+
+- Create a repository if it doesn't already exist in cloud
+- Go to the folder where you've files and do a bash git from there by right clicking. 
+- Type <git init> to initialiase a local repository. THis will create a .git hidden folder
+- Type <git checkout -b main> to add a branch named main in local repository and switches to it
+Note: In bash if you see: Admin@Amin MINGW64 /f/Octane/PA Engine V12/Vids and Docs/Planning Analytics SaaS on AWS Replicating data/tm1gitdemo-PASaaSDataReplication (master)
+
+the (master) here indicates the branch you're in.. When you type <git checkout -b main>, it will change to (main)
+- Type <git  add .> to add all your files to the local repository branch
+
+- Type <git commit -m 'commit message'> to save/commit changes you made to those files and is ready to be pushed to cloud
+
+- Add the ssh key to the agent
+-- Type <eval $(ssh-agent)> to start the SSH agent
+-- Type <ssh-add "F:\Octane\PA Engine V12\GitDemoKeys\id_ecdsa"> to add ssh key to the agent
+-- Verify ssh key addition by typing <ssh-add -l> which should list the SSH key
+-- To test the ssh connection type <ssh -T git@github.com> which should return "Hi aminnn123! You've successfully authenticated, but GitHub does not provide shell access."
+
+
+Other:
+1. Type <pwd> to get name of working directory
+2. commands like git commit or git push should be run within an existing Git repository.
+3. <git remote -v> will show you a list of remotes along with their URLs
